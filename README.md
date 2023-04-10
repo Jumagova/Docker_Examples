@@ -1,5 +1,3 @@
-Sure, here's a brief documentation for all the examples:
-
 ## Example 1: Basic Docker commands
 
 This example provides basic commands to interact with Docker. It shows how to pull an image from Docker Hub and run a container with that image. It also covers some options like creating a container with a custom name and making it interactive.
