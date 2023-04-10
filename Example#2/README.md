@@ -1,14 +1,35 @@
 ## Dockerfile
 
-# When you try to compile an image, you must use command docker build for read you Dockerfile and make and image for it, in this case we're going to compile node 18 image for our use, we must to run this command in the directory where dockerfile is located
+This readme explains how to compile a Docker image using a Dockerfile.
 
-docker build -t [name of image]:latest . 
+### Building the image
 
-# In this case we're going to use 
+To compile an image using a Dockerfile, run the following command in the directory where the Dockerfile is located:
 
-docker build -t node_test:lastest . 
+```
+docker build -t [image_name]:[tag] .
+```
 
-# note: we add latest for say to docker that will be the last image that we create
+In this example, we are compiling a node 18 image for our use, so we would run:
 
-# We should run a container with docker run command 
+```
+docker build -t node_test:latest .
+```
+
+Note that we add "latest" to the tag to indicate that this is the most up-to-date version of the image.
+
+### Running a container
+
+To run a container using the newly created image, use the following command:
+
+```
+docker run --rm -it --name [container_name] [image_name]
+```
+
+For example, to run a container using the node_test image, use:
+
+```
 docker run --rm -it --name docker_run_build_example node_test
+```
+
+This will start a new container with the specified name and image.

@@ -1,25 +1,31 @@
-## Docker example 1
+# Docker Example 1
 
-# Para traerme una imagen del dockerhub
+This readme explains basic Docker commands for users who want to work with Docker containers.
 
-docker pull node
+## To pull an image from Docker Hub
 
-docker run node:latest
+To pull an image from Docker Hub, run the following command:
 
+```docker pull node```
 
-# Si creo otra imagen entonces se crea con un nombre genérico para agregarle un nombre entonces debo decírselo con el comando --name
+To run the image, use:
 
-docker run --name node_test node:latest 
+```docker run node:latest```
 
+## Assigning a name to a created image
 
-# Pero y que hago con esto, para hacerlo interactivo debo decírselo con el comando -it
+If you create another image, it is assigned a generic name. To assign a custom name, use the following command:
 
+```docker run --name node_test node:latest```
 
-docker run -it --name node_test node:latest 
+## Interactive mode
 
-# Pero al tratar de crear un contenedor con el mismo nombre tengo problemas por lo tanto debo borrar el anterior por lo tanto le agregamos el comando --rm
+To work with Docker containers in interactive mode, use the following command:
 
-docker run --rm -it --name node_test node:latest
+```docker run -it --name node_test node:latest```
 
+## Removing previous container
 
+When attempting to create a container with the same name as a previous one, problems can arise. To prevent this, remove the previous container using the --rm command:
 
+```docker run --rm -it --name node_test node:latest```
