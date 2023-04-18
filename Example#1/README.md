@@ -1,20 +1,24 @@
-# Docker Example 1
+# Docker Example 1 
 
-This readme explains basic Docker commands for users who want to work with Docker containers.
+This readme explains basic Docker commands for users who want to work with Docker containers and Docker images.
 
-## To pull an image from Docker Hub
+## Pull an image from Docker Hub
 
 To pull an image from Docker Hub, run the following command:
 
 ```docker pull node```
 
-To run the image, use:
+This will pull the latest version of the **node** image published in Docker Hub
+
+## Starting a container
+
+To start a container, use:
 
 ```docker run node:latest```
 
-## Assigning a name to a created image
+## Starting a container with a personalized name
 
-If you create another image, it is assigned a generic name. To assign a custom name, use the following command:
+If you want to have and personalized name for your container, use the following command:
 
 ```docker run --name node_test node:latest```
 
@@ -26,6 +30,6 @@ To work with Docker containers in interactive mode, use the following command:
 
 ## Removing previous container
 
-When attempting to create a container with the same name as a previous one, problems can arise. To prevent this, remove the previous container using the --rm command:
+When attempting to create a container with the same name as the previous one, problems can arise. To prevent this you can add the ```--rm``` flag to the command, this will start a container and remove it the moment it stops:
 
 ```docker run --rm -it --name node_test node:latest```
