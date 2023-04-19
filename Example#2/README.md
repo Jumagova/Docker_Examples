@@ -10,7 +10,7 @@ To compile an image using a Dockerfile, run the following command in the directo
 docker build -t [image_name]:[tag] .
 ```
 
-In this example, we are compiling a node 18 image for our use, so we would run:
+In this example, we are compiling a node 18 image to which we assigned the name ```node_test``` in the previous example, so we would run:
 
 ```
 docker build -t node_test:latest .

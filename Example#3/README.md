@@ -21,13 +21,12 @@ COPY app /app
 RUN npm install -g nodemon
 
 # Install app dependencies
-RUN cd /app && npm install
+RUN npm install
 
 # Expose port 8000 for the app to listen on
 EXPOSE 8000
 
 # Run the application
-CMD ["bash"]
 CMD ["node", "index.js"]
 ```
 
@@ -37,13 +36,13 @@ Let's go over what each of these commands does:
 
 - `WORKDIR`: This command sets the working directory for the application inside the container. We're setting it to `/app`.
 
-- `COPY`: This command copies the application files from the host machine to the container.
+- `COPY`: This command copies the application files from `/app` folder of the host machine to the `/app` folder in the container.
 
-- `RUN`: This command runs a command inside the container. In this case, we're installing `nodemon` and the app dependencies.
+- `RUN`: This command runs a command inside the container. In this case, we're installing `nodemon` and the app dependencies that are stablished in the ``package.json`` file.
 
 - `EXPOSE`: This command exposes port 8000 for the application to listen on.
 
-- `CMD`: This command specifies the command that should be run when the container starts. In this case, we're starting a bash command line and then running the `node` command to start the application.
+- `CMD`: This command specifies the command that should be run when the container starts. In this case, we're running the `node` command to start the application.
 
 ### Building the image
 

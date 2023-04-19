@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY app /app
 
+RUN npm install -g nodemon
 
-RUN cd /app && npm install http
+RUN npm install
 
 EXPOSE 8000
 
-# CMD ["bash"]
 CMD ["node", "index.js"]
